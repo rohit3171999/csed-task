@@ -1,0 +1,37 @@
+/* Add this CSS in your stylesheet or in a style block within the component */
+
+/* Flex container for the cards */
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Adjust this property to change spacing between cards */
+  }
+  
+  /* Styling for each card */
+  .card {
+    width: 18rem;
+    margin-bottom: 20px; /* Adjust this property to change the vertical spacing between cards */
+  }
+  
+  /* Optional: Add styles for the card image, title, and other text if needed */
+  .card-img-top {
+    height: 200px; /* Adjust the height of the card image as needed */
+  }
+  .card-title {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  .card-text {
+    font-size: 14px;
+  }
+  
+  /* Optional: Add styles for the "View" button */
+  .view-button {
+    margin-top: 10px; /* Adjust this property to change the spacing between card content and the button */
+  }
+
+
+
+
+
+  
