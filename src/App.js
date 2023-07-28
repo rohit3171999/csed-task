@@ -9,6 +9,7 @@ import LoginPage from "./pages/Login";
 import ListingsPage from "./pages/List";
 import HomePage from "./pages/Homi";
 import UserDetailPage from "./pages/Details";
+import HomePage2 from "./pages/Homi2";
 
 
 function App() {
@@ -23,6 +24,8 @@ function App() {
       <Route path="/register" element={<RegisterPage />} />
       <Route path="/book/list" element={<ListingsPage />} />
       <Route path="/book/view/:bookId" element={<UserDetailPage />} />
+      <Route path="/show/details" element={<HomePage2 />} />
+
       
     </Routes>
     

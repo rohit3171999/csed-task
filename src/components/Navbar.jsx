@@ -15,6 +15,7 @@ const MyNavbar = () => {
           <Nav.Link href="/register">Register</Nav.Link>
           <Nav.Link href="/login">Login</Nav.Link>
           <Nav.Link href="/book/list">Add details</Nav.Link>
+          <Nav.Link href="/show/details">Show Details</Nav.Link>
           
         </Nav>
       </Container>

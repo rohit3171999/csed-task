@@ -1,15 +1,15 @@
 import React, {useEffect, useState} from "react";
-import BookCard from "../components/Card";
-import { useFirebase } from '../context/Firebase';
+// import BookCard from "../components/Card";
+// import { useFirebase } from '../context/Firebase';
 
 
  const HomePage = ()=>{
-     const firebase=useFirebase();
-     const [books, setBooks]=useState([]);
-     useEffect(()=>{
-         firebase.listAllBooks().then((books) => setBooks(books.docs));
-       // eslint-disable-next-line  
-     },[])
+    //  const firebase=useFirebase();
+    //  const [books, setBooks]=useState([]);
+    //  useEffect(()=>{
+    //      firebase.listAllBooks().then((books) => setBooks(books.docs));
+    //    // eslint-disable-next-line  
+    //  },[])
 return (
   <div>
   <div>
@@ -46,8 +46,8 @@ return (
      </section>
   </header>
   </div>
-  <h1 style={{ textAlign: 'center', fontWeight: 'bold', fontSize: '36px', marginTop: '20px', marginBottom: '20px', padding: '10px' }}>All Tree Plantation Details</h1>
-  <div className="container mt-5">
+  {/* <h1 style={{ textAlign: 'center', fontWeight: 'bold', fontSize: '36px', marginTop: '20px', marginBottom: '20px', padding: '10px' }}>All Tree Plantation Details</h1> */}
+  {/* <div className="container mt-5">
   <div className="row d-flex justify-content-center">
     {books.map((book) => (
       <div key={book.id} className="col-sm-3">
@@ -55,7 +55,7 @@ return (
       </div>
     ))}
   </div>
-</div>
+</div> */}
 
   
   </div>

@@ -63,9 +63,13 @@ const BookCard = (props) => {
         <Card.Img variant="top" src={url} className="card-img-top" />
         <Card.Body>
           <Card.Title>{props.displayName}</Card.Title>
-          <Card.Text>The name of image is "{props.names}"</Card.Text>
-          <Card.Text>The user id is: {props.userID}</Card.Text>
-          <Card.Text>User email is: {props.userEmail}</Card.Text>
+          <Card.Text>The name of image is:- {props.names}</Card.Text>
+          <Card.Text>Plot Number is:- {props.plot}</Card.Text>
+          <Card.Text>Date is:- {props.selectedDate}</Card.Text>
+
+          <Card.Text>Tree Specifications are {props.tree}</Card.Text>
+          <Card.Text>The tree id is:- {props.userID}</Card.Text>
+          
           <Button
             onClick={(e) => navigate(`/book/view/${props.id}`)}
             variant="outlined"

@@ -28,7 +28,11 @@ const UserDetailPage =()=>{
         <h1>Details: </h1>
         
         <p> The name of image is: {data.names}</p>
-        <p> User id of user is: {data.userID}</p>
+        <p> Tree id is: {data.userID}</p>
+        <p> Plot Number is: {data.plot}</p>
+        <p> Tree Specification is: {data.tree}</p>
+        <p> Date is: {data.selectedDate}</p>
+
         <p> UserEmail of user is: {data.userEmail}</p>
         <p> The image url is: {data.imageURL}</p>
 

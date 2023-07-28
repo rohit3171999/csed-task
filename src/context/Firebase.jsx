@@ -38,16 +38,20 @@ useEffect(()=>{
      
    
 
-    const handleCreateNewListing=async (names, coverpic)=>{
+    const handleCreateNewListing=async (names, plot, tree, selectedDate, coverpic)=>{
         const imageRef=ref(storage, `uploads/images/${Date.now()}-${coverpic.name}`);
         const uploadResult = await uploadBytes(imageRef, coverpic);
         return await addDoc(collection(firestore,"books"),{
             names,
+            plot,
+            tree,
+            selectedDate,
             imageURL: uploadResult.ref.fullPath,
             userID: user.uid,
             userEmail: user.email,
             displayName: user.displayName,
             photoURL: user.photoURL,
+
         });
     };
     const listAllBooks=()=>{
