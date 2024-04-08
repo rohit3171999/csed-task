@@ -12,7 +12,7 @@ const LoginPage =()=>{
         if(firebase.isLoggedin){
             //navigate to home
             navigate("/")
-            
+           
         }
     },[firebase, navigate]);
     const handleSubmit = async(e) => {

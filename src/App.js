@@ -10,6 +10,8 @@ import ListingsPage from "./pages/List";
 import HomePage from "./pages/Homi";
 import UserDetailPage from "./pages/Details";
 import HomePage2 from "./pages/Homi2";
+import GenerateIDComponent from "./pages/Admin";
+
 
 
 function App() {
@@ -18,6 +20,7 @@ function App() {
     <div>
     
     <MyNavbar/>
+    
     <Routes>
       <Route path="/" element={<HomePage/>} />
       <Route path="/login" element={<LoginPage />} />
@@ -25,6 +28,7 @@ function App() {
       <Route path="/book/list" element={<ListingsPage />} />
       <Route path="/book/view/:bookId" element={<UserDetailPage />} />
       <Route path="/show/details" element={<HomePage2 />} />
+      <Route path="/admin" element={<GenerateIDComponent />} />
 
       
     </Routes>

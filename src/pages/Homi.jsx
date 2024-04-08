@@ -1,69 +1,147 @@
-import React, {useEffect, useState} from "react";
-// import BookCard from "../components/Card";
-// import { useFirebase } from '../context/Firebase';
+import { red } from "@mui/material/colors";
+import React, { useEffect, useState } from "react";
 
 
- const HomePage = ()=>{
-    //  const firebase=useFirebase();
-    //  const [books, setBooks]=useState([]);
-    //  useEffect(()=>{
-    //      firebase.listAllBooks().then((books) => setBooks(books.docs));
-    //    // eslint-disable-next-line  
-    //  },[])
-return (
-  <div>
-  <div>
-  <header>
-  <section className="container main-hero-container">
-       <div className="row">
-         <div className="col-12 col-lg-6 header-left-side d-flex justify-content-center flex-column align-items-start ">
-           <h1 className="display-2">
-           Interested in being a part of our mission ? Say!!! <br /> Gau Gram Tree
-           </h1>
-           <p className="main-hero-para">
-           A well-balanced ecosystem, efficient natural resource use and green 
-           pollution-free earth for our present and future generations and all creatures living in it.
-           To sensitize people about the value and importance of the environment, environmental issues and its 
-           adverse impact on our lives and empower them to contribute to a sustainable and GREEN world.
-           </p>
-           
-         </div>
-         {/*  --------------- main header right side--------------  */}
-         <div className="col-12 col-lg-6 header-right-side d-flex justify-content-center 
-         align-items-center main-herosection-images">
-           <img
-             src="./image/main22.jpg"
-             alt="heroimg"
-             className="img-fluid"
-           />
-           <img
-             src="./image/child.jpg"
-             alt="heroimg4"
-             className="img-fluid main-hero-img2"
-           />
-         </div>
-       </div>
-     </section>
-  </header>
-  </div>
-  {/* <h1 style={{ textAlign: 'center', fontWeight: 'bold', fontSize: '36px', marginTop: '20px', marginBottom: '20px', padding: '10px' }}>All Tree Plantation Details</h1> */}
-  {/* <div className="container mt-5">
-  <div className="row d-flex justify-content-center">
-    {books.map((book) => (
-      <div key={book.id} className="col-sm-3">
-        <BookCard id={book.id} {...book.data()} />
+
+const HomePage = () => {
+
+
+  const backgroundImageUrl = 'url("https://i.ibb.co/KNk7DSC/garden-sunrise-lawn-1.jpg")'; // Replace with the actual image path
+
+  return (
+
+    <div><h1 style={{
+      textAlign: 'center',
+      padding: 30,
+      fontSize: 50,
+      color: 'darkorange',
+      fontWeight: 'bold',
+     
+      
+
+
+    }}>मथुरा  वृन्दावन  हासानन्द  गौचर  भूमि  ट्रस्ट</h1>
+
+      <div >
+
+
+        <header>
+          <section className="img-fluid"
+            style={{
+              backgroundImage: backgroundImageUrl,
+              backgroundRepeat: "no-repeat",
+              backgroundSize: "cover",
+              height: "100vh",
+
+              display: "flex",
+              flexDirection: 'row',
+
+            }}>
+
+
+
+            <div className="row">
+              <div className="col-lg-8 header-left-side d-flex  flex-column align-items-start ">
+                <img
+                  src="./image/pmn.jpg" style={{
+                    position: "absolute",
+                    marginTop: 45,
+                    top: 0,
+                    left: 0,
+                    maxHeight: 130,
+
+                  }}
+
+                />
+                <img
+                  src="./image/images.jpg" style={{
+                    position: "absolute",
+                    marginTop: 45,
+                    top: 0,
+                    right: 0,
+                    maxHeight: 130,
+                  }}
+
+                />
+                <p  style={{
+                  marginTop: 20,
+                  marginLeft: 25,
+                  fontSize: 50,
+                  paddingLeft: 25,
+                  fontWeight: 'bold',
+                  color: 'darkorange'
+                }}
+                >
+                  गौ ग्राम वृक्षारोपण
+                </p>
+                {/* <p style={{
+                  marginTop: 40,
+                  marginLeft: 10,
+                  fontSize: 20,
+                  paddingLeft: 25,
+                  color: 'lightgrey',
+                
+                }}>
+                  पश्यैतान् महाभागान् पराबैंकान्तजीवितान्।<br/>
+                  वातवर्षातपहिमान् सहन्तरे वारयन्ति नः॥
+                  <br />
+<p></p>
+
+                  अहो एषां वरं जन्म सर्वप्राण्युपजीवनम्।<br/>
+                  सुजनस्यैव येषां वै विमुखा यान्ति नार्थिनः॥
+                </p> */}
+                <p style={{
+                  marginTop: 20,
+                  marginLeft: 25,
+                  fontSize: 22,
+                  paddingLeft: 25,
+                  color: 'darkorange',
+                  lineHeight: '1.5', // Added for better line spacing
+                }}>
+                  पश्यैतान् महाभागान् पराबैंकान्तजीवितान्।<br />
+                  वातवर्षातपहिमान् सहन्तरे वारयन्ति नः॥<br /><br />
+
+                  अहो एषां वरं जन्म सर्वप्राण्युपजीवनम्।<br />
+                  सुजनस्यैव येषां वै विमुखा यान्ति नार्थिनः॥
+                </p>
+                <p style={{
+                  marginTop: 20,
+                  marginLeft: 25,
+                  fontSize: 20,
+                  paddingLeft: 25,
+                  color: 'white',
+
+                }}>
+                  भगवान योगेश्वर श्रीकृष्ण का बचपन "गौ माता के बीच ही बीता,<br /> इसीलिए उन्हें "गोपाल" नाम
+                  से भी जाना जाता है। ऐसी महान<br /> पुण्य धरा पर भारत रत्न महामना पं० श्री मदन मोहन मालवीय <br />
+                  जी ने बृज क्षेत्र में गौ पालन, संवर्धन, संरक्षण एवं गोचर भूमि की<br /> सुरक्षा
+                  हेतु पूज्य महात्मा हासानन्द जी की प्रेरणा से मथुरा  वृन्दावन  हासानन्द  गौचर  भूमि  ट्रस्ट की स्थापना की गयी|
+                </p>
+
+
+
+              </div>
+
+              <div className="col-lg-4 header-right-side d-flex justify-content-center 
+         align-items-center main-herosection-images" >
+                <img
+                  src="./image/cow ppt.jpg" style={{
+                    width: 700,
+                    height: 400,
+                    marginLeft: '270px',
+                    marginTop: -100
+                  }}
+                />
+
+              </div>
+            </div>
+          </section>
+        </header>
       </div>
-    ))}
-  </div>
-</div> */}
-
-  
-  </div>
+    </div>
 
 
-
-  
-);
+  );
 };
- export default HomePage;
+export default HomePage;
 

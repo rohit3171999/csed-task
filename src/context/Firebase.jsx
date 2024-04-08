@@ -7,18 +7,19 @@ import { getStorage, ref, uploadBytes, getDownloadURL} from "firebase/storage";
 
 const FirebaseContext=createContext(null);
 const firebaseConfig = {
-    apiKey: "AIzaSyACPmoI3-YTTnWIv5AjGz8zkxGXYNXEDrk",
-    authDomain: "bookify-3b401.firebaseapp.com",
-    projectId: "bookify-3b401",
-    storageBucket: "bookify-3b401.appspot.com",
-    messagingSenderId: "918443449165",
-    appId: "1:918443449165:web:999133a6415910c0bfb504"
+    apiKey: "AIzaSyBgXk3XxSfJ3lMCsl3RYcohdeYymA2GAxQ",
+    authDomain: "gau-gram-tree.firebaseapp.com",
+    projectId: "gau-gram-tree",
+    storageBucket: "gau-gram-tree.appspot.com",
+    messagingSenderId: "611880399469",
+    appId: "1:611880399469:web:6db5b6192767b9c0210564"
   };
 export const useFirebase=()=>useContext(FirebaseContext);
 const firebaseApp=initializeApp(firebaseConfig);
 const firebaseAuth=getAuth(firebaseApp);
 const firestore=getFirestore(firebaseApp);
 const storage=getStorage(firebaseApp);
+
 
 
 export const FirebaseProvider=(props)=>{
@@ -38,14 +39,18 @@ useEffect(()=>{
      
    
 
-    const handleCreateNewListing=async (names, plot, tree, selectedDate, coverpic)=>{
+    const handleCreateNewListing=async (names, plot, selectedDate,tree, treeNumber, status,  coverpic)=>{
         const imageRef=ref(storage, `uploads/images/${Date.now()}-${coverpic.name}`);
         const uploadResult = await uploadBytes(imageRef, coverpic);
         return await addDoc(collection(firestore,"books"),{
             names,
             plot,
-            tree,
             selectedDate,
+            tree,
+            treeNumber,
+            status,
+            
+            
             imageURL: uploadResult.ref.fullPath,
             userID: user.uid,
             userEmail: user.email,
@@ -54,29 +59,58 @@ useEffect(()=>{
 
         });
     };
+
+    const handleCreateNewListing2=async (generatedID, palakName, otherInfo)=>{
+        
+        return await addDoc(collection(firestore,"books_new"),{
+            generatedID, palakName, otherInfo
+
+        });
+    };
+
+
     const listAllBooks=()=>{
         return getDocs(collection(firestore, 'books'));
     };
+ 
+
     const getBookById=async(id)=>{
         const docRef=doc(firestore, 'books', id);
         const result=await getDoc(docRef);
         return result;
     }
-    const getImageURL=(path)=>{
-        return getDownloadURL(ref(storage, path))
 
+    
+    // const getImageURL=(path)=>{
+    //      return getDownloadURL(ref(storage, path))
+
+    //  }
+
+    const getImageURL = async (path) => {
+        try {
+            const imageRef = ref(storage, path);
+            const url = await getDownloadURL(imageRef);
+            return url;
+        } catch (error) {
+            // Handle the error (e.g., logging, displaying an error message)
+            console.error("Error getting image URL:", error);
+            return null;
+        }
     }
 
 
-
-
+    
     const isLoggedin =user ? true : false;
     return <FirebaseContext.Provider value={{ 
     signupWithEmailAndPassword, 
     signinUserWithEmailAndPass,
     handleCreateNewListing,
+    handleCreateNewListing2,
+    
     listAllBooks,
-    getImageURL,
+    
     getBookById,
+    
+    getImageURL,
     isLoggedin}}>{props.children}</FirebaseContext.Provider>
 };
