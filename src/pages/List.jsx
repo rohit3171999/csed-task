@@ -63,7 +63,6 @@ const ListingsPage=()=>{
         <Form.Label> वृक्ष प्रजाति</Form.Label>
         <Form.Control onChange={(e)=>setTree(e.target.value)}
         value={tree} type="text" placeholder="वृक्ष प्रजाति" />
-        
       </Form.Group>
       <Form.Group className="mb-3" controlId="formBasicEmail">
         <Form.Label> पालक नाम</Form.Label>
