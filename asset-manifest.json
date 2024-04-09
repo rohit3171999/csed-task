@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/csed-task/static/css/main.ec3ba63c.css",
+    "main.js": "/csed-task/static/js/main.ba43a53a.js",
+    "static/js/787.3386b701.chunk.js": "/csed-task/static/js/787.3386b701.chunk.js",
+    "index.html": "/csed-task/index.html",
+    "main.ec3ba63c.css.map": "/csed-task/static/css/main.ec3ba63c.css.map",
+    "main.ba43a53a.js.map": "/csed-task/static/js/main.ba43a53a.js.map",
+    "787.3386b701.chunk.js.map": "/csed-task/static/js/787.3386b701.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ec3ba63c.css",
+    "static/js/main.ba43a53a.js"
+  ]
+}
